@@ -2,7 +2,7 @@
 export const defaultConfiguration = {
     titleClosed: 'Live Chat!',
     titleOpen: 'Telegram',
-    closedStyle: 'chat', // button atau chat
+    closedStyle: 'button', // button atau chat
     closedChatAvatarUrl: '', // hanya digunakan jika closedStyle diatur ke 'chat'
     cookieExpiration: 1, // dalam hari. Setelah dibuka, judul obrolan tertup akan ditampilkan sebagai tombol (ketika closedStyle diatur ke 'chat')
     introMessage: 'Halo! Bagaimana kami dapat membantu Anda?',
