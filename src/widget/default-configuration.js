@@ -1,7 +1,7 @@
 
 export const defaultConfiguration = {
     titleClosed: 'Live Chat!',
-    titleOpen: 'FAUZAN-CELL',
+    titleOpen: 'Telegram',
     closedStyle: 'chat', // button atau chat
     closedChatAvatarUrl: '', // hanya digunakan jika closedStyle diatur ke 'chat'
     cookieExpiration: 1, // dalam hari. Setelah dibuka, judul obrolan tertup akan ditampilkan sebagai tombol (ketika closedStyle diatur ke 'chat')
