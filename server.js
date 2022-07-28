@@ -10,7 +10,7 @@ const io = require('socket.io')(http);
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
 app.use(bodyParser.json());
 
-// handle admin Telegram messages
+// menangani pesan Telegram
 app.post('/hook', function(req, res){
     try {
         const message = req.body.message || req.body.channel_post;
@@ -22,9 +22,9 @@ app.post('/hook', function(req, res){
         if (text.startsWith("/start")) {
             console.log("/start chatId " + chatId);
             sendTelegramMessage(chatId,
-                "*Welcome to Telegram* \n" +
-                "Your unique chat id is `" + chatId + "`\n" +
-                "Use it to link between the embedded chat and this telegram chat",
+                "*Selamat datang di Telegram* \n" +
+                "Id obrolan Anda adalah `" + chatId + "`\n" +
+                "Gunakan untuk menghubungkan antara obrolan yang disematkan, dengan obrolan telegram ini.",
                 "Markdown");
         } else if (reply) {
             let replyText = reply.text || "";
@@ -41,7 +41,7 @@ app.post('/hook', function(req, res){
     res.end();
 });
 
-// handle chat visitors websocket messages
+// menangani pesan websocket
 io.on('connection', function(socket){
 
     socket.on('register', function(registerMsg){
@@ -83,7 +83,7 @@ app.post('/usage-start', cors(), function(req, res) {
     res.end();
 });
 
-// left here until the cache expires
+// tertinggal disini sampai cache kadaluarsa
 app.post('/usage-end', cors(), function(req, res) {
     res.statusCode = 200;
     res.end();
