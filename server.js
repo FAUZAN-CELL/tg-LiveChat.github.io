@@ -22,9 +22,9 @@ app.post('/hook', function(req, res){
         if (text.startsWith("/start")) {
             console.log("/start chatId " + chatId);
             sendTelegramMessage(chatId,
-                "*Selamat datang di FAUZAN-CELL* \n" +
-                "Id obrolan Anda adalah `" + chatId + "`\n" +
-                "Gunakan untuk menghubungkan antara obrolan yang disematkan dengan obrolan telegram ini",
+                "*Selamat Datang di Layanan Live Chat* \n" +
+                "ID Anda adalah `" + chatId + "`\n" +
+                "Gunakan untuk menghubungkan antara obrolan yang disematkan, dengan obrolan telegram ini.",
                 "Markdown");
         } else if (reply) {
             let replyText = reply.text || "";
@@ -53,7 +53,7 @@ io.on('connection', function(socket){
 
         socket.on('message', function(msg) {
             messageReceived = true;
-            io.to(userId).emit(chatId + "-" + userId, msg);
+            io.to(userId).emit(chatId + userId, msg);
             let visitorName = msg.visitorName ? "[" + msg.visitorName + "]: " : "";
             sendTelegramMessage(chatId, userId + ":" + visitorName + " " + msg.text);
         });
