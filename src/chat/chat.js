@@ -99,7 +99,7 @@ export default class Chat extends Component {
                     messages.push(msg);
                 });
             } catch (e) {
-                console.log('failed to add new message to local storage', e);
+                console.log('gagal menambahkan pesan baru ke penyimpanan lokal', e);
                 store.set(this.messagesKey, [])
             }
         }
