@@ -25,7 +25,7 @@ export default class Chat extends Component {
             this.socket.emit('register', {chatId: this.props.chatId, userId: this.props.userId });
         });
         this.socket.on(this.props.chatId, this.incomingMessage);
-        this.socket.on(this.props.chatId+this.props.userId, this.incomingMessage);
+        this.socket.on(this.props.chatId+'-'+this.props.userId, this.incomingMessage);
 
         if (!this.state.messages.length) {
             this.writeToMessages({text: this.props.conf.introMessage, from: 'admin'});
