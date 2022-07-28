@@ -10,7 +10,7 @@ const io = require('socket.io')(http);
 app.use(express.static('dist', {index: 'demo.html', maxage: '4h'}));
 app.use(bodyParser.json());
 
-// menangani pesan Telegram
+// handle admin Telegram messages
 app.post('/hook', function(req, res){
     try {
         const message = req.body.message || req.body.channel_post;
@@ -22,9 +22,9 @@ app.post('/hook', function(req, res){
         if (text.startsWith("/start")) {
             console.log("/start chatId " + chatId);
             sendTelegramMessage(chatId,
-                "*Selamat Datang di Layanan Live Chat* \n" +
-                "ID Anda adalah `" + chatId + "`\n" +
-                "Gunakan untuk menghubungkan antara obrolan yang disematkan, dengan obrolan telegram ini.",
+                "*Welcome to Telegram* \n" +
+                "Your unique chat id is `" + chatId + "`\n" +
+                "Use it to link between the embedded chat and this telegram chat",
                 "Markdown");
         } else if (reply) {
             let replyText = reply.text || "";
@@ -41,7 +41,7 @@ app.post('/hook', function(req, res){
     res.end();
 });
 
-// menangani pesan websocket
+// handle chat visitors websocket messages
 io.on('connection', function(socket){
 
     socket.on('register', function(registerMsg){
@@ -53,7 +53,7 @@ io.on('connection', function(socket){
 
         socket.on('message', function(msg) {
             messageReceived = true;
-            io.to(userId).emit(chatId + userId, msg);
+            io.to(userId).emit(chatId + "-" + userId, msg);
             let visitorName = msg.visitorName ? "[" + msg.visitorName + "]: " : "";
             sendTelegramMessage(chatId, userId + ":" + visitorName + " " + msg.text);
         });
@@ -83,7 +83,7 @@ app.post('/usage-start', cors(), function(req, res) {
     res.end();
 });
 
-// tertinggal disini sampai cache kadaluarsa
+// left here until the cache expires
 app.post('/usage-end', cors(), function(req, res) {
     res.statusCode = 200;
     res.end();
