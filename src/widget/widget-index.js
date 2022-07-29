@@ -10,7 +10,7 @@ if (window.attachEvent) {
 
 function injectChat() {
     if (!window.tgId) {
-        console.error('Silahkan atur window.tgId (lihat contoh di github.com/tg-LiveChat)');
+        console.error('Please set window.tgId (see example at FAUZAN-CELL.github.io)');
     } else {
         let root = document.createElement('div');
         root.id = 'tgRoot';

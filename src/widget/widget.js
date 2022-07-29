@@ -28,17 +28,17 @@ export default class Widget extends Component {
 
         let wrapperStyle;
         if (!isChatOpen && (isMobile || conf.alwaysUseFloatingButton)) {
-            wrapperStyle = { ...mobileClosedWrapperStyle}; // menutup tombol mengambang seluler
+            wrapperStyle = { ...mobileClosedWrapperStyle}; // closed mobile floating button
         } else if (!isMobile){
             wrapperStyle = (conf.closedStyle === 'chat' || isChatOpen || this.wasChatOpened()) ?
                 (isChatOpen) ? 
-                    { ...desktopWrapperStyle, ...wrapperWidth} // mode desktop, gaya tombol
+                    { ...desktopWrapperStyle, ...wrapperWidth} // desktop mode, button style
                     :
                     { ...desktopWrapperStyle}
                 :
-                { ...desktopClosedWrapperStyleChat}; // mode desktop, gaya obrolan
+                { ...desktopClosedWrapperStyleChat}; // desktop mode, chat style
         } else {
-            wrapperStyle = mobileOpenWrapperStyle; // buka pembungkus seluler seharusnya tidak memiliki perbatasan
+            wrapperStyle = mobileOpenWrapperStyle; // open mobile wrapper should have no border
         }
 
         return (

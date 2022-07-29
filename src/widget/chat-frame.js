@@ -3,12 +3,12 @@ import { h, Component } from 'preact';
 export default class ChatFrame extends Component {
 
     shouldComponentUpdate() {
-        // jangan dirender ulang melalui diff:
+        // do not re-render via diff:
         return false;
     }
 
     render({tgId, host, iFrameSrc, isMobile, conf},{}) {
-        let dynamicConf = window.tgOnOpen || {}; // konfigurasi ini dimuat ketika bingkai obrolan dibuka
+        let dynamicConf = window.tgOnOpen || {}; // these configuration are loaded when the chat frame is opened
         let encodedConf = encodeURIComponent(JSON.stringify({...conf, ...dynamicConf}));
         return (
             <iframe src={iFrameSrc + '?id=' + tgId + '&host=' + host + '&conf=' + encodedConf }
