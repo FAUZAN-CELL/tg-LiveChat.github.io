@@ -8,7 +8,7 @@ if (confString) {
     try {
         conf = JSON.parse(confString);
     } catch (e) {
-        console.log('Gagal mengurai conf', confString, e);
+        console.log('Failed to parse conf', confString, e);
     }
 }
 
@@ -19,7 +19,7 @@ render(
         host={getUrlParameter('host')}
         conf={conf}
     />,
-    document.getElementById('LiveChat')
+    document.getElementById('tgChat')
 );
 
 function getUrlParameter(name) {

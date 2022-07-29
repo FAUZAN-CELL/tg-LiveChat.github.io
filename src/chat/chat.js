@@ -6,7 +6,7 @@ import MessageArea from './message-area';
 
 export default class Chat extends Component {
 
-    autoResponseState = 'pristine'; // pristine, set atau canceled
+    autoResponseState = 'pristine'; // pristine, set or canceled
     autoResponseTimer = 0;
 
     constructor(props) {
@@ -99,7 +99,7 @@ export default class Chat extends Component {
                     messages.push(msg);
                 });
             } catch (e) {
-                console.log('gagal menambahkan pesan baru ke penyimpanan lokal', e);
+                console.log('failed to add new message to local storage', e);
                 store.set(this.messagesKey, [])
             }
         }
