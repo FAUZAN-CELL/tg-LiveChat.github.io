@@ -1,6 +1,6 @@
 # FAUZAN-CELL
 
-Provides a **Free** live chat widget that you can easily add to your website. It will let you chat with your website visitors using your Telegram messenger. 
+***Provides*** a free live chat widget that you can easily add to your website. It will let you chat with your website visitors using your Telegram messenger. 
 
 #### :tada: Main Contributors :tada:
 - [aslauris](https://github.com/aslauris) - Who made the first UI! Check out his website - [wedofe.com](https://www.wedofe.com/)
