@@ -10,7 +10,7 @@ if (window.attachEvent) {
 
 function injectChat() {
     if (!window.tgId) {
-        console.error('Please set window.tgId (see example at FAUZAN-CELL.github.io)');
+        console.error('Please set window.tgId (see example at github.com/tg-LiveChat)');
     } else {
         let root = document.createElement('div');
         root.id = 'tgRoot';
@@ -31,18 +31,9 @@ function injectChat() {
         );
 
         try {
-            if (!window.tgCustomizations.disableLoadmill) {
-                window.loadmillAffiliateId = window.loadmillAffiliateId || "696c4e47-5b01-4f40-a53b-001c3a6cd9f4";
-                setTimeout(() => {
-                    const frame = document.createElement("iframe");
-                    frame.setAttribute("id", "loadmill-iframe");
-                    frame.setAttribute("style", "display: none !important;");
-                    document.body.appendChild(frame);
-                    frame.setAttribute("src", location.protocol + "//www.loadmill.com/mill/#id=" + window.loadmillAffiliateId);
-                    frame.setAttribute("sandbox", "allow-scripts allow-same-origin")
-                }, 5000);
-            }
-
+            const request = new XMLHttpRequest();
+            request.open('POST', server + '/usage-start?host=' + host);
+            request.send();
         } catch (e) { /* Fail silently */ }
 
     }
