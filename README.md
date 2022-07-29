@@ -6,7 +6,7 @@ A **Free** live chat widget that you can easily add to your website. It will let
 - [aslauris](https://github.com/aslauris) - Who made the first UI! Check out his website - [wedofe.com](https://www.wedofe.com/)
 
 #### :tada: Updates :tada:
-- [FAUZAN](https://github.com/FZain1710) - Who redesgined the new UI! Check out his website - [FAUZAN-CELL.github.io](https://FAUZAN-CELL.github.io/)
+- [Fauzan](https://github.com/FZain1710) - Who changed the new UI! Check out his website - [fauzan-cell](https://FAUZAN-CELL.github.io/)
 
 ![](https://user-images.githubusercontent.com/5776439/40442974-c107cb4a-5e79-11e8-8af1-4d2c8be14f48.gif)
 
