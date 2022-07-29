@@ -1,7 +1,7 @@
 {
   "name": "tg",
   "version": "0.0.1",
-  "description": "Sebuah widget obrolan langsung yang ditautkan ke telegram Anda",
+  "description": "A live chat widget linked to your telegram messenger",
   "engines": {
     "node": "6.9.1",
     "npm": "3.10.8"
