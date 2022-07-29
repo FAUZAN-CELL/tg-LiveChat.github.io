@@ -11,7 +11,7 @@ export const defaultConfiguration = {
     'contact you, and we will get back to you as soon as we can.',
     placeholderText: 'Send a message...',
     displayMessageTime: true,
-    mainColor: '#1f8ceb',
+    mainColor: '#0088cc',
     alwaysUseFloatingButton: false,
     desktopHeight: 450,
     desktopWidth: 370
